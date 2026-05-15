@@ -1,0 +1,47 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    font-size: 20px;
+    font-family: "Berlin Sans FB", sans-serif;
+}
+
+.button {
+    padding: 10px 20px;
+    border: none;
+    background: black;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.dashboardLink {
+    padding: 10px 16px;
+    background: #111827;
+    color: white;
+    border-radius: 6px;
+}
+.logoContainer {
+    display: flex;
+    align-items: center;
+}
+
+.logoImage {
+    height: 60px;
+    width: auto;
+}
+
