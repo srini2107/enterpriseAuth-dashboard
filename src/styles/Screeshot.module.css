@@ -1,0 +1,41 @@
+.section {
+    padding: 100px 40px;
+    background: #f8fafc;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 52px;
+    margin-bottom: 60px;
+    color: #0f172a;
+}
+
+/* Grid Layout */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Screenshot Cards */
+.image {
+    width: 100%;
+    border-radius: 18px;
+
+    box-shadow:
+            0 10px 30px rgba(0,0,0,0.12);
+
+    transition:
+            transform 0.3s ease,
+            box-shadow 0.3s ease;
+}
+
+/* Hover Effect */
+.image:hover {
+    transform: translateY(-10px);
+
+    box-shadow:
+            0 20px 40px rgba(0,0,0,0.18);
+}
