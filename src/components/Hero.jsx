@@ -12,7 +12,9 @@ export default function Hero() {
             </p>
 
             <div className={styles.buttons}>
-                <button>Start Free Trial</button>
+                <a href="/signup">
+                    <button>Start Free Trial</button>
+                </a>
             </div>
 
             {/* Demo Video */}

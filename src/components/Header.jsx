@@ -14,18 +14,28 @@ export default function Header() {
             </div>
 
             <nav className={styles.nav}>
+
                 <a href="#features">Features</a>
+
                 <a href="#pricing">Pricing</a>
+
                 <a href="#screenshots">Screenshots</a>
+
+                <a href="/login">Login</a>
 
                 <a href="/dashboard" className={styles.dashboardLink}>
                     Dashboard
                 </a>
 
-                <button className={styles.button}>
+                <a href="/signup" className={styles.dashboardLink}>
                     Get Started
-                </button>
+                </a>
+
+
+
             </nav>
+
+
         </header>
     );
 }

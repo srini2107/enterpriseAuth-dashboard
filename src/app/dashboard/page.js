@@ -1,6 +1,53 @@
+'use client';
 import styles from '../../styles/dashboard.module.css';
+import { useRouter } from 'next/navigation';
+import { useEffect, useState } from 'react';
 
 export default function DashboardPage() {
+    const [user, setUser] = useState(null);
+    const router = useRouter();
+    useEffect(() => {
+
+        const token = localStorage.getItem('token');
+
+        if (!token) {
+
+            router.push('/login');
+
+            return;
+        }
+
+        fetch(
+            'http://localhost:8082/auth/me',
+            {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            }
+        )
+            .then((res) => res.json())
+
+            .then((data) => {
+
+                console.log(data);
+
+                setUser(data);
+            })
+
+            .catch((err) => {
+
+                console.error(err);
+
+                router.push('/login');
+            });
+
+    }, []);
+    const handleLogout = () => {
+
+        localStorage.removeItem('token');
+
+        router.push('/login');
+    };
     return (
         <div className={styles.container}>
 
@@ -10,13 +57,31 @@ export default function DashboardPage() {
 
                 <nav>
                     <ul>
+
                         <li>Dashboard</li>
-                        <li>Users</li>
-                        <li>Roles</li>
-                        <li>Permissions</li>
-                        <li>API Keys</li>
-                        <li>Audit Logs</li>
-                        <li>Settings</li>
+
+                        {
+                            user?.role === 'ADMIN' && (
+                                <>
+                                    <li>Users</li>
+
+                                    <li>Roles</li>
+
+                                    <li>Permissions</li>
+
+                                    <li>API Keys</li>
+
+                                    <li>Audit Logs</li>
+
+                                    <li>Settings</li>
+                                </>
+                            )
+                        }
+
+                        <li onClick={handleLogout}>
+                            Logout
+                        </li>
+
                     </ul>
                 </nav>
             </aside>
@@ -31,6 +96,20 @@ export default function DashboardPage() {
                         Create User
                     </button>
                 </div>
+                {
+                    user && (
+
+                        <div className={styles.userInfo}>
+
+                            <h2>Welcome {user.name} 👋</h2>
+
+                            <p>{user.email}</p>
+
+                            <span>Role: {user.role}</span>
+
+                        </div>
+                    )
+                }
 
                 {/* KPI Cards */}
                 <div className={styles.cardGrid}>
