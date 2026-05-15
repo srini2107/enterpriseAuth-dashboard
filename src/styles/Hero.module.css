@@ -1,34 +1,58 @@
 .hero {
+    min-height: 100vh;
+    padding: 120px 20px 80px;
     text-align: center;
-    padding: 100px 20px;
+
+    background: linear-gradient(
+            135deg,
+            #0f172a 0%,
+            #111827 40%,
+            #1e293b 100%
+    );
+
+    color: white;
 }
 
 .hero h1 {
-    font-size: 52px;
-    margin-bottom: 20px;
+    font-size: 72px;
+    font-weight: 800;
+    margin-bottom: 30px;
+    line-height: 1.2;
 }
 
 .hero p {
-    max-width: 800px;
-    margin: auto;
-    font-size: 18px;
-    line-height: 1.6;
+    max-width: 900px;
+    margin: 0 auto;
+    font-size: 22px;
+    line-height: 1.8;
+    color: #cbd5e1;
 }
 
 .buttons {
-    margin-top: 30px;
+    margin-top: 40px;
     display: flex;
     justify-content: center;
     gap: 20px;
 }
 
 .buttons button {
-    padding: 15px 28px;
+    padding: 16px 32px;
+    border-radius: 10px;
     border: none;
+    font-size: 16px;
+    font-weight: 600;
     cursor: pointer;
-    border-radius: 5px;
-    background: black;
+}
+
+.buttons button:first-child {
+    background: white;
+    color: black;
+}
+
+.secondary {
+    background: rgba(255,255,255,0.1);
     color: white;
+    backdrop-filter: blur(10px);
 }
 
 .videoContainer {
