@@ -4,11 +4,13 @@ export default function Header() {
     return (
         <header className={styles.header}>
             <div className={styles.logoContainer}>
-                <img
-                    src="/logo11.png"
-                    alt="EnterpriseAuth Logo"
-                    className={styles.logoImage}
-                />
+                <a>
+                    <img
+                        src="/logo11.png"
+                        alt="EnterpriseAuth Logo"
+                        className={styles.logoImage}
+                    />
+                </a>
             </div>
 
             <nav className={styles.nav}>
